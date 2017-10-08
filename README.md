@@ -4,10 +4,10 @@ TimeHelper - мобильное Android приложение для планир
 
 # Технолоии разработки
 
-* Xamarin - фреймворк для кроссплатформенной разработки
+* Xamarin - фреймворк для кроссплатформенной разработки;
 * Google Maps API - API для работы с картами Google.
 
 # Аналоги
 
-* Microsoft To-Do
-* Todoist
+* Microsoft To-Do;
+* Todoist.
