@@ -17,7 +17,19 @@
 - Google API – для взаимодействия пользователя с картами Google (при привязке места к создаваемой задаче).
 
 #### 2.2 Интерфейс пользователя
-Интерфейс пользователя приведен на мокапах, которые можно найти в данном репозитории (TimeHelper/mockups).
+Интерфейс пользователя приведен на мокапах:
+
+<p align="center">
+ <img src ="https://raw.githubusercontent.com/RS00/TimeHelper/master/mockups/Task%20list.png" />
+</p>
+
+<p align="center">
+ <img src ="https://raw.githubusercontent.com/RS00/TimeHelper/master/mockups/New%20Task.png" />
+</p>
+
+<p align="center">
+ <img src ="https://raw.githubusercontent.com/RS00/TimeHelper/master/mockups/Important%20notes.png" />
+</p>
 
 #### 2.3 Характеристики пользователей
 Приложение рассчитано на широкую аудиторию (независимо от возраста, социального статуса, профессии). Пользователем данного приложения является лицо, заинтересованное в планировании и организации своего рабочего времени и досуга.
