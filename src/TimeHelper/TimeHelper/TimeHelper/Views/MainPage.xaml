@@ -4,12 +4,12 @@
              x:Class="TimeHelper.Views.MainPage"
              xmlns:pages="clr-namespace:TimeHelper.Views">
   <MasterDetailPage.Master>
-    <pages:MainPageMaster x:Name="MasterPage" />
+    <pages:Master x:Name="MasterPage" />
   </MasterDetailPage.Master>
   <MasterDetailPage.Detail>
     <NavigationPage>
       <x:Arguments>
-        <pages:ItemsPage />
+        <pages:ItemsPage x:Name="ItemsPage" />
       </x:Arguments>
     </NavigationPage>
   </MasterDetailPage.Detail>

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using TimeHelper.Model;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -16,11 +16,14 @@ namespace TimeHelper.Views
         {
             InitializeComponent();
             MasterPage.ListView.ItemSelected += ListView_ItemSelected;
+            
         }
+
+        
 
         private void ListView_ItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
-            var item = e.SelectedItem as ItemsPageItem;
+            var item = e.SelectedItem as Model.MasterModel;
             if (item == null)
                 return;
 
