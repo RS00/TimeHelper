@@ -39,13 +39,16 @@
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="Builder.cs" />
-    <Compile Include="BulderWithPriority.cs" />
+    <Compile Include="BuilderWithPriority.cs" />
     <Compile Include="Models\MasterModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Task.cs" />
     <Compile Include="TaskList.cs" />
     <Compile Include="ViewModels\ItemsPageViewModel.cs" />
     <Compile Include="ViewModels\MasterViewModel.cs" />
+    <Compile Include="Views\CreateTaskPage.xaml.cs">
+      <DependentUpon>CreateTaskPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\ItemDetail.xaml.cs">
       <DependentUpon>ItemDetail.xaml</DependentUpon>
     </Compile>
@@ -100,6 +103,12 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Views\ItemsPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\CreateTaskPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>

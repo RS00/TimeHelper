@@ -8,16 +8,32 @@ namespace TimeHelper
 {
     class Task
     {
-        String Name { get; set; }
-        DateTime DeadLineDate { get; set; }
-        DateTime CreationDate;
-        Int32 Priorty;
-        DateTime Time;
-        String FilePath;
-        String Description;
-        Boolean IsOverdue;
+        public String Name { get; }
+        public DateTime DeadLineDate { get; set; }
+        public DateTime CreationDate { get; set; }
+        Int32 TaskPriority;
+        public String FilePath { get; set; }
+        public String Description { get; set; }
+        public Boolean IsOverdue { get; set; }
 
-        Task(String name, DateTime creationTime, DateTime deadlineTime)
+        public Int32 Priority
+        {
+            get
+            {
+                return TaskPriority;
+            }
+
+            set
+            {
+                if (value < 1 || value > 5)
+                    return;
+                else
+                    TaskPriority = value;
+            }
+        }
+
+
+        public Task(String name, DateTime creationTime, DateTime deadlineTime)
         {
             this.Name = name;
             this.CreationDate = creationTime;

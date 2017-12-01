@@ -7,16 +7,19 @@ using TimeHelper.Views;
 
 namespace TimeHelper.Model
 {
-
-    public class Model
+    //Main model, contain ItemList and NoteList
+    class Model
     {
+        public String Name { get; set; }
+        public String Date { get; set; }
+        public static TimeHelper.TaskList TaskList = new TimeHelper.TaskList();
+        public Type TargetType { get; set; }
+
         public Model()
         {
             TargetType = typeof(ItemDetail);
         }
-        public String Name { get; set; }
-        public string Date { get; set; }
 
-        public Type TargetType { get; set; }
+
     }
 }

@@ -7,16 +7,21 @@ namespace TimeHelper
 {
     class TaskList
     {
-        List<TimeHelper.Task> ListOfTasks;
-
-        TaskList()
+        public List<TimeHelper.Task> ListOfTasks { get; }
+        Builder builder;
+        public TaskList()
         {
             ListOfTasks = new List<TimeHelper.Task>();
         }
 
-        void AddTask()
+        public void AddTask(String name, DateTime deadline, String description, Int32 priority)
         {
-
+            builder = new BuilderWithPriority();
+            builder.BuildNameAndDate(name, DateTime.Now, deadline);
+            builder.BuildPriority(priority);
+            builder.BuildAdditionalInfo(description);
+            TimeHelper.Task task = builder.GetTask();
+            ListOfTasks.Add(task);
         }
     }
 }

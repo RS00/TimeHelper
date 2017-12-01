@@ -31,5 +31,10 @@ namespace TimeHelper.Views
 
             ItemsList.SelectedItem = null;
         }
+
+        private void AddTaskButton_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new CreateTaskPage());
+        }
     }
 }

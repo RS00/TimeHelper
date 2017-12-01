@@ -7,6 +7,7 @@ using TimeHelper.Views;
 
 namespace TimeHelper.Model
 {
+    //Model for Maste page
     class MasterModel
     {
         public MasterModel()

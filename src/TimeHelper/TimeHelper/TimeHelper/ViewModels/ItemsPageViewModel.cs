@@ -19,11 +19,19 @@ namespace TimeHelper.ViewModels
 
         public ItemsPageViewModel()
         {
-           Items = new ObservableCollection<Model.Model>(new[]
+            Items = new ObservableCollection<Model.Model>();
+            List<TimeHelper.Task> taskList = Model.Model.TaskList.ListOfTasks;
+            for (int i = 0; i < taskList.Count; i++)
             {
-                    new Model.Model{ Name = "123" },
-                    new Model.Model {Name = "55536mj "},
-            });
+                Task t = taskList[i];
+                Items.Add(new Model.Model { Name = t.Name, Date = t.DeadLineDate.ToString() });
+            }
+        }
+
+        public void AddTask(String name, Int32 priority, DateTime deadline, String description)
+        {
+            Model.Model.TaskList.AddTask(name, deadline, description, priority);
+            Items.Add(new Model.Model { Name = name, Date = deadline.ToString() });
         }
 
         #region INotifyPropertyChanged Implementation
