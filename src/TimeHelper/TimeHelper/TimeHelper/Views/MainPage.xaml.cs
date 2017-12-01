@@ -29,7 +29,7 @@ namespace TimeHelper.Views
 
             var page = (Page)Activator.CreateInstance(item.TargetType);
             page.Title = item.Title;
-
+            
             Detail = new NavigationPage(page);
             IsPresented = false;
 

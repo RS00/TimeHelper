@@ -15,7 +15,7 @@ namespace TimeHelper.Views
         public ItemDetail()
         {
             InitializeComponent();
-            BindingContext = new Model.Model();
+            BindingContext = new ViewModels.ItemsPageViewModel();
         }
     }
 }

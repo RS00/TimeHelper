@@ -19,9 +19,18 @@ namespace TimeHelper.Views
 
         private void OK_Clicked(object sender, EventArgs e)
         {
+            int priority = 1;
             int size = Navigation.NavigationStack.Count;
             Page p = Navigation.NavigationStack.ElementAt(size - 2);
-            ((ItemsPageViewModel)p.BindingContext).AddTask(TaskName.Text, 5, TaskDeadline.Date, TaskDescription.Text);
+            if (PriorityButton5.BackgroundColor == Color.DarkRed)
+                priority = 5;
+            else if (PriorityButton4.BackgroundColor == Color.DarkRed)
+                priority = 4;
+            else if (PriorityButton3.BackgroundColor == Color.DarkRed)
+                priority = 3;
+            else if (PriorityButton2.BackgroundColor == Color.DarkRed)
+                priority = 2;
+            ((ItemsPageViewModel)p.BindingContext).AddTask(TaskName.Text, priority, TaskDeadline.Date, TaskDescription.Text);
             Navigation.PopAsync();
         }
 

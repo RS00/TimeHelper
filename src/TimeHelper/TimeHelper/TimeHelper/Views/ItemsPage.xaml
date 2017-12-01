@@ -28,7 +28,7 @@
                                 <RowDefinition  Height="0.5"/>
                             </Grid.RowDefinitions>
                             <Label TextColor="#000000"
-                                   FontSize="17"
+                                   FontSize="12"
                                    HorizontalTextAlignment="Center"
                                    Grid.ColumnSpan="5"
                                    Grid.Row="0"
@@ -39,7 +39,8 @@
                                    Grid.Column="0"
                                    HorizontalTextAlignment="Center"
                                    Margin="0, -2">●</Label>
-                            <Label TextColor="#FFFFFF"
+                            <Label x:Name="P1Label"
+                                   TextColor="{Binding Color1}"
                                    Grid.Row="1"
                                    FontSize="13"
                                    Grid.Column="0"
@@ -51,7 +52,8 @@
                                    Grid.Column="1"
                                    HorizontalTextAlignment="Center"
                                    Margin="0, -2">●</Label>
-                            <Label TextColor="#FFFFFF"
+                            <Label x:Name="P2Label"
+                                   TextColor="{Binding Color2}"
                                    Grid.Row="1"
                                    FontSize="13"
                                    Grid.Column="1"
@@ -63,7 +65,8 @@
                                    Grid.Column="2"
                                    HorizontalTextAlignment="Center"
                                    Margin="0, -2">●</Label>
-                            <Label TextColor="#FFFFFF"
+                            <Label x:Name="P3Label"
+                                   TextColor="{Binding Color3}"
                                    Grid.Row="1"
                                    FontSize="13"
                                    Grid.Column="2"
@@ -75,7 +78,8 @@
                                    Grid.Column="3"
                                    HorizontalTextAlignment="Center"
                                    Margin="0, -2">●</Label>
-                            <Label TextColor="#FFFFFF"
+                            <Label x:Name="P4Label"
+                                   TextColor="{Binding Color4}"
                                    Grid.Row="1"
                                    FontSize="13"
                                    Grid.Column="3"
@@ -87,7 +91,8 @@
                                    Grid.Column="4"
                                    HorizontalTextAlignment="Center"
                                    Margin="0, -2">●</Label>
-                            <Label TextColor="#FFFFFF"
+                            <Label x:Name="P5Label"
+                                   TextColor="{Binding Color5}"
                                    Grid.Row="1"
                                    FontSize="13"
                                    Grid.Column="4"

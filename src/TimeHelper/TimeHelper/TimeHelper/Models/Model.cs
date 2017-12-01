@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using TimeHelper.Views;
+using Xamarin.Forms;
 
 namespace TimeHelper.Model
 {
@@ -12,9 +13,49 @@ namespace TimeHelper.Model
     {
         public String Name { get; set; }
         public String Date { get; set; }
+        public Int32 Priority { get; set; }
         public static TimeHelper.TaskList TaskList = new TimeHelper.TaskList();
         public Type TargetType { get; set; }
 
+        public Color Color1
+        {
+            get
+            {
+                return Color.DarkRed;
+            }
+        }
+
+        public Color Color2
+        {
+            get
+            {
+                return Priority < 2 ? Color.White : Color.DarkRed;
+            }
+        }
+
+        public Color Color3
+        {
+            get
+            {
+                return Priority < 3 ? Color.White : Color.DarkRed;
+            }
+        }
+
+        public Color Color4
+        {
+            get
+            {
+                return Priority < 4 ? Color.White : Color.DarkRed;
+            }
+        }
+
+        public Color Color5
+        {
+            get
+            {
+                return Priority < 5 ? Color.White : Color.DarkRed;
+            }
+        }
         public Model()
         {
             TargetType = typeof(ItemDetail);
