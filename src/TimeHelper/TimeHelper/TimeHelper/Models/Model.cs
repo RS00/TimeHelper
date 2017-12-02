@@ -12,10 +12,12 @@ namespace TimeHelper.Model
     class Model
     {
         public String Name { get; set; }
-        public String Date { get; set; }
+        public DateTime DeadlineDate { get; set; }
+        public DateTime CreateDate { get; set; }
         public Int32 Priority { get; set; }
         public static TimeHelper.TaskList TaskList = new TimeHelper.TaskList();
         public Type TargetType { get; set; }
+        public String Description { get; set; }
 
         public Color Color1
         {

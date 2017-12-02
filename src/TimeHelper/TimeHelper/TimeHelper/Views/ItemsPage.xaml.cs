@@ -24,11 +24,9 @@ namespace TimeHelper.Views
             var item = e.SelectedItem as Model.Model;
             if (item == null)
                 return;
-            var page = (Page)Activator.CreateInstance(item.TargetType);
-
-            page.Title = item.Name;
+            ItemDetail page = new ItemDetail(item.Name, item.DeadlineDate, item.CreateDate, item.Description);
+            page.Title = "Task Info";
             Navigation.PushAsync(page);
-
             ItemsList.SelectedItem = null;
         }
 

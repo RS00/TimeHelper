@@ -25,14 +25,14 @@ namespace TimeHelper.ViewModels
             for (int i = 0; i < taskList.Count; i++)
             {
                 Task t = taskList[i];
-                Items.Add(new Model.Model { Name = t.Name, Date = t.DeadLineDate.ToString(), Priority = t.Priority });
+                Items.Add(new Model.Model { Name = t.Name, DeadlineDate = t.DeadLineDate, Priority = t.Priority, CreateDate = t.CreationDate.Date, Description = t.Description});
             }
         }
 
         public void AddTask(String name, Int32 priority, DateTime deadline, String description)
         {
             Model.Model.TaskList.AddTask(name, deadline, description, priority);
-            Items.Add(new Model.Model { Name = name, Date = deadline.ToString(), Priority = priority});
+            Items.Add(new Model.Model { Name = name, DeadlineDate = deadline, Priority = priority, CreateDate = DateTime.Now, Description = description});
         }
 
         #region INotifyPropertyChanged Implementation

@@ -12,10 +12,25 @@ namespace TimeHelper.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class ItemDetail : ContentPage
     {
-        public ItemDetail()
+        String Name;
+        String Description;
+        DateTime CreationDate;
+        DateTime DeadlineDate;
+        public ItemDetail(String name, DateTime deadline, DateTime created, String desc)
         {
             InitializeComponent();
-            BindingContext = new ViewModels.ItemsPageViewModel();
+            Name = name;
+            NameLabel.Text = Name;
+            DeadlineDate = deadline;
+            DeadlineLabel.Text = DeadlineDate.ToString();
+            CreationDate = created;
+            CreatedLabel.Text = CreationDate.ToString();
+            Description = desc;
+            if (Description == null)
+                DescriptionInfoLabel.IsVisible = false;
+            else
+                DescriptionLabel.Text = Description;
+
         }
     }
 }
