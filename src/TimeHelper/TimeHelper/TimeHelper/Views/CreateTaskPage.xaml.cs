@@ -19,9 +19,20 @@ namespace TimeHelper.Views
 
         private void OK_Clicked(object sender, EventArgs e)
         {
-            int priority = 1;
+            if (TaskName.Text == null)
+            {
+                TaskName.BackgroundColor = Color.Red;
+                return;
+            }
             int size = Navigation.NavigationStack.Count;
             Page p = Navigation.NavigationStack.ElementAt(size - 2);
+            if (PriorityAuto.BackgroundColor == Color.DarkRed)
+            {
+                ((ItemsPageViewModel)p.BindingContext).AddTask(TaskName.Text, -1, TaskDeadline.Date, TaskDescription.Text);
+                Navigation.PopAsync();
+                return;
+            }
+            int priority = 1;
             if (PriorityButton5.BackgroundColor == Color.DarkRed)
                 priority = 5;
             else if (PriorityButton4.BackgroundColor == Color.DarkRed)
@@ -30,6 +41,7 @@ namespace TimeHelper.Views
                 priority = 3;
             else if (PriorityButton2.BackgroundColor == Color.DarkRed)
                 priority = 2;
+
             ((ItemsPageViewModel)p.BindingContext).AddTask(TaskName.Text, priority, TaskDeadline.Date, TaskDescription.Text);
             Navigation.PopAsync();
         }

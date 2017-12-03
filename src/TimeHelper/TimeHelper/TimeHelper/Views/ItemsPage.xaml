@@ -4,7 +4,7 @@
              x:Class="TimeHelper.Views.ItemsPage"
              Title="Welcome to TimeHelper!">
     <StackLayout>
-      
+
         <ListView  x:Name="ItemsList"
               SeparatorVisibility="None"
               HasUnevenRows="true"
@@ -131,4 +131,7 @@
                 Text="+"
                 Clicked="AddTaskButton_Clicked"/>
     </StackLayout>
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Name="ToolbarItem" Text="Sort" Clicked="ToolbarItem_Clicked"/>
+    </ContentPage.ToolbarItems>
 </ContentPage>

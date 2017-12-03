@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 using TimeHelper.Model;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using TimeHelper.ViewModels;
+using System.Collections.ObjectModel;
 
 namespace TimeHelper.Views
 {
@@ -16,7 +18,6 @@ namespace TimeHelper.Views
         {
             InitializeComponent();
             MasterPage.ListView.ItemSelected += ListView_ItemSelected;
-            
         }
 
         

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,13 +10,14 @@ using Xamarin.Forms;
 namespace TimeHelper.Model
 {
     //Main model, contain ItemList and NoteList
-    class Model
+    class Model 
     {
         public String Name { get; set; }
         public DateTime DeadlineDate { get; set; }
         public DateTime CreateDate { get; set; }
         public Int32 Priority { get; set; }
         public static TimeHelper.TaskList TaskList = new TimeHelper.TaskList();
+        public static TimeHelper.NoteList NoteList = new TimeHelper.NoteList();
         public Type TargetType { get; set; }
         public String Description { get; set; }
 
@@ -60,9 +62,7 @@ namespace TimeHelper.Model
         }
         public Model()
         {
-            TargetType = typeof(ItemDetail);
         }
-
 
     }
 }

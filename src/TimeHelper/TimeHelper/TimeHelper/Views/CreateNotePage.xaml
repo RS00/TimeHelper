@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TimeHelper.Views.CreateNotePage">
+    <StackLayout>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="35*" />
+                <ColumnDefinition Width="1"/>
+                <ColumnDefinition Width="65*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Label      Text="Name"
+                    FontSize="24"
+                    HorizontalTextAlignment="Center"
+                    TextColor="Black"
+                    VerticalTextAlignment="Center"/>
+            <BoxView    Grid.Row="0"
+                    Grid.Column="1"
+                    Grid.RowSpan="2"
+                    BackgroundColor="Black"/>
+            <Entry      x:Name="NoteName"
+                    Grid.Row="0"
+                    Grid.Column="2"
+                    Grid.ColumnSpan="2"
+                    WidthRequest="280"
+                    HorizontalOptions="CenterAndExpand"
+                    HorizontalTextAlignment="Center"
+                    VerticalOptions="CenterAndExpand"/>
+            <Label      Grid.Column="0"
+                    Grid.Row="1"
+                    Text="Description"
+                    FontSize="20"
+                    HorizontalTextAlignment="Center"
+                    TextColor="Black"
+                    VerticalTextAlignment="Center"/>
+            <Editor     x:Name="NoteDescription"    
+                    Grid.Row="1"
+                    Grid.Column="2"
+                    HeightRequest="100"
+                    Grid.ColumnSpan="2" />
+        </Grid>
+        <Button Clicked="OK_Clicked"
+                    HorizontalOptions="Center"
+                    VerticalOptions="End"
+                    BorderRadius="10"
+                    WidthRequest="100"
+                    HeightRequest="36"
+                    BackgroundColor="DarkGray"
+                    TextColor="White"
+                    Text="Ok" />
+    </StackLayout>
+    
+</ContentPage>

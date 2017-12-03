@@ -15,9 +15,19 @@ namespace TimeHelper.ViewModels
 {
     class ItemsPageViewModel : INotifyPropertyChanged
     {
-        public ObservableCollection<Model.Model> Items { get; set; }
-
-      
+        private ObservableCollection<Model.Model> ModelItems;
+        public ObservableCollection<Model.Model> Items
+        {
+            get
+            {
+                return ModelItems;
+            }
+            set
+            {
+                ModelItems = value;
+                OnPropertyChanged("Items");
+            }
+        }
         public ItemsPageViewModel()
         {
             Items = new ObservableCollection<Model.Model>();
@@ -25,14 +35,23 @@ namespace TimeHelper.ViewModels
             for (int i = 0; i < taskList.Count; i++)
             {
                 Task t = taskList[i];
-                Items.Add(new Model.Model { Name = t.Name, DeadlineDate = t.DeadLineDate, Priority = t.Priority, CreateDate = t.CreationDate.Date, Description = t.Description});
+                Items.Add(new Model.Model() { Name = t.Name, DeadlineDate = t.DeadLineDate, Priority = t.Priority, CreateDate = t.CreationDate.Date, Description = t.Description});
             }
+            
         }
 
         public void AddTask(String name, Int32 priority, DateTime deadline, String description)
         {
-            Model.Model.TaskList.AddTask(name, deadline, description, priority);
-            Items.Add(new Model.Model { Name = name, DeadlineDate = deadline, Priority = priority, CreateDate = DateTime.Now, Description = description});
+            if (priority == -1 )
+            {
+                Model.Model.TaskList.AddTask(name, deadline, description);
+            }
+            else
+            {
+                Model.Model.TaskList.AddTask(name, deadline, description, priority);
+            }
+            Task last = Model.Model.TaskList.ListOfTasks.Last();
+            Items.Add(new Model.Model() { Name = last.Name, DeadlineDate = last.DeadLineDate, Priority = last.Priority, CreateDate = last.CreationDate, Description = last.Description});
         }
 
         #region INotifyPropertyChanged Implementation

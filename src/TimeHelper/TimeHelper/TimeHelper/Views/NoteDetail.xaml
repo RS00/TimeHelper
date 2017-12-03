@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TimeHelper.Views.NoteDetail">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="30*"/>
+            <ColumnDefinition Width="1"/>
+            <ColumnDefinition Width="70*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Label  Grid.Column="0"
+                Grid.Row="0"
+                Text="Name"
+                FontSize="18"
+                TextColor="Black"
+                HorizontalOptions="Center"
+               />
+        <BoxView Grid.Column="1"
+                 Grid.Row="0"
+                 Grid.RowSpan="3"
+                 BackgroundColor="Black" />
+        <Label   x:Name="NameLabel"
+                 Grid.Column="2"
+                 Grid.Row="0"
+                 FontSize="18"
+                 TextColor="Black"
+                 HorizontalOptions="Center"
+               />
+        <Label  Grid.Column="0"
+                Grid.Row="1"
+                Text="Created"
+                FontSize="18"
+                TextColor="Black"
+                HorizontalOptions="Center"
+               />
+        <Label   x:Name="CreateLabel"
+                 Grid.Column="2"
+                 Grid.Row="1"
+                 FontSize="18"
+                 TextColor="Black"
+                 HorizontalOptions="Center"
+               />
+        <Label  Grid.Column="0"
+                Grid.Row="2"
+                Text="Description"
+                FontSize="18"
+                TextColor="Black"
+                HorizontalOptions="Center"
+               />
+        <Label   x:Name="DescriptionLabel"
+                 Grid.Column="2"
+                 Grid.Row="2"
+                 FontSize="18"
+                 TextColor="Black"
+                 HorizontalOptions="Center"
+               />
+    </Grid>
+</ContentPage>

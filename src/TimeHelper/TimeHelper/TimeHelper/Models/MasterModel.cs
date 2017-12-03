@@ -10,9 +10,9 @@ namespace TimeHelper.Model
     //Model for Maste page
     class MasterModel
     {
-        public MasterModel()
+        public MasterModel(Type t)
         {
-            TargetType = typeof(ItemsPage);
+            TargetType = t;
         }
         public int Id { get; set; }
         public string Title { get; set; }

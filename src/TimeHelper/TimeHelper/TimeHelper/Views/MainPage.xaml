@@ -6,11 +6,11 @@
   <MasterDetailPage.Master>
     <pages:Master x:Name="MasterPage" />
   </MasterDetailPage.Master>
-  <MasterDetailPage.Detail>
-    <NavigationPage>
-      <x:Arguments>
-        <pages:ItemsPage x:Name="ItemsPage" />
-      </x:Arguments>
-    </NavigationPage>
-  </MasterDetailPage.Detail>
+    <MasterDetailPage.Detail>
+        <NavigationPage>
+            <x:Arguments>
+                <pages:ItemsPage x:Name="ItemsPage" />
+            </x:Arguments>
+        </NavigationPage>
+    </MasterDetailPage.Detail>
 </MasterDetailPage>

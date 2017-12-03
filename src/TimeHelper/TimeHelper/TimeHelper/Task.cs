@@ -3,11 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using SQLite;
 
 namespace TimeHelper
 {
+    [Table("Tasks")]
     class Task
     {
+        [PrimaryKey, AutoIncrement, Column("_id")]
+        public Int32 Id { get; set; }
         public String Name { get; }
         public DateTime DeadLineDate { get; set; }
         public DateTime CreationDate { get; set; }
@@ -31,7 +35,9 @@ namespace TimeHelper
                     TaskPriority = value;
             }
         }
-
+        public Task()
+        {
+        }
 
         public Task(String name, DateTime creationTime, DateTime deadlineTime)
         {

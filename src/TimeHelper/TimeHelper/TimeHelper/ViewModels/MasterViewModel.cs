@@ -21,8 +21,8 @@ namespace TimeHelper.ViewModels
         {
             MenuItems = new ObservableCollection<Model.MasterModel>(new[]
             {
-                    new Model.MasterModel { Id = 0, Title = "Task list" },
-                    new Model.MasterModel { Id = 1, Title = "Note list" },
+                    new Model.MasterModel(typeof(ItemsPage)) { Id = 0, Title = "Task list" },
+                    new Model.MasterModel(typeof(NotesPage)) { Id = 1, Title = "Note list" },
                 });
         }
 
