@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using TimeHelper.ViewModels;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -29,7 +25,6 @@ namespace TimeHelper.Views
             Navigation.PushAsync(page);
             NotesList.SelectedItem = null;
         }
-
 
         private void AddNoteButton_Clicked(object sender, EventArgs e)
         {

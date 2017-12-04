@@ -1,10 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using TimeHelper.Views;
 using Xamarin.Forms;
 
 namespace TimeHelper.Model
@@ -16,8 +10,8 @@ namespace TimeHelper.Model
         public DateTime DeadlineDate { get; set; }
         public DateTime CreateDate { get; set; }
         public Int32 Priority { get; set; }
-        public static TimeHelper.TaskList TaskList = new TimeHelper.TaskList();
-        public static TimeHelper.NoteList NoteList = new TimeHelper.NoteList();
+        public static TaskList TaskList = new TaskList();
+        public static NoteList NoteList = new NoteList();
         public Type TargetType { get; set; }
         public String Description { get; set; }
 
@@ -60,6 +54,7 @@ namespace TimeHelper.Model
                 return Priority < 5 ? Color.White : Color.DarkRed;
             }
         }
+
         public Model()
         {
         }

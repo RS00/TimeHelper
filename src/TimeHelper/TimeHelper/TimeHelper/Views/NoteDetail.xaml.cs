@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -15,7 +11,6 @@ namespace TimeHelper.Views
         String Name;
         String Description;
         DateTime CreationDate;
-        DateTime DeadlineDate;
 
         public NoteDetail(String name, DateTime created, String desc)
         {

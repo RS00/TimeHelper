@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace TimeHelper
 {
@@ -14,9 +10,9 @@ namespace TimeHelper
 
         public Note(String name, String description)
         {
-            this.Name = Name;
-            this.Description = description;
-            this.CreationTime = DateTime.Now;
+            Name = name;
+            Description = description;
+            CreationTime = DateTime.Now;
         }
     }
 }

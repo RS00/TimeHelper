@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using SQLite;
 
 namespace TimeHelper
@@ -35,15 +31,16 @@ namespace TimeHelper
                     TaskPriority = value;
             }
         }
+
         public Task()
         {
         }
 
         public Task(String name, DateTime creationTime, DateTime deadlineTime)
         {
-            this.Name = name;
-            this.CreationDate = creationTime;
-            this.DeadLineDate = deadlineTime;
+            Name = name;
+            CreationDate = creationTime;
+            DeadLineDate = deadlineTime;
         }
     }
 }

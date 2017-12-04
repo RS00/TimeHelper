@@ -1,13 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using TimeHelper.Model;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
-using TimeHelper.ViewModels;
-using System.Collections.ObjectModel;
 
 namespace TimeHelper.Views
 {
@@ -20,20 +13,15 @@ namespace TimeHelper.Views
             MasterPage.ListView.ItemSelected += ListView_ItemSelected;
         }
 
-        
-
         private void ListView_ItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
             var item = e.SelectedItem as Model.MasterModel;
             if (item == null)
                 return;
-
             var page = (Page)Activator.CreateInstance(item.TargetType);
             page.Title = item.Title;
-            
             Detail = new NavigationPage(page);
             IsPresented = false;
-
             MasterPage.ListView.SelectedItem = null;
         }
     }

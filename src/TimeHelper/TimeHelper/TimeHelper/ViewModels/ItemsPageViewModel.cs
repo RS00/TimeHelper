@@ -4,17 +4,12 @@ using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
 using System.Runtime.CompilerServices;
-using System.Text;
-using System.Threading.Tasks;
-using TimeHelper.Model;
-using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
-using TimeHelper.Views;
 
 namespace TimeHelper.ViewModels
 {
     class ItemsPageViewModel : INotifyPropertyChanged
     {
+        private const int NoPriority = -1;
         private ObservableCollection<Model.Model> ModelItems;
         public ObservableCollection<Model.Model> Items
         {
@@ -28,21 +23,21 @@ namespace TimeHelper.ViewModels
                 OnPropertyChanged("Items");
             }
         }
+
         public ItemsPageViewModel()
         {
             Items = new ObservableCollection<Model.Model>();
-            List<TimeHelper.Task> taskList = Model.Model.TaskList.ListOfTasks;
+            List<Task> taskList = Model.Model.TaskList.ListOfTasks;
             for (int i = 0; i < taskList.Count; i++)
             {
                 Task t = taskList[i];
                 Items.Add(new Model.Model() { Name = t.Name, DeadlineDate = t.DeadLineDate, Priority = t.Priority, CreateDate = t.CreationDate.Date, Description = t.Description});
             }
-            
         }
 
         public void AddTask(String name, Int32 priority, DateTime deadline, String description)
         {
-            if (priority == -1 )
+            if (priority == NoPriority)
             {
                 Model.Model.TaskList.AddTask(name, deadline, description);
             }

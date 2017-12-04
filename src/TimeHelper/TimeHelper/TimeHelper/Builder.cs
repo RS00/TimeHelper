@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace TimeHelper
 {
@@ -11,6 +7,6 @@ namespace TimeHelper
         public abstract void BuildNameAndDate(String name, DateTime creationTime, DateTime deadlineTime);
         public abstract void BuildPriority(Int32 priority);
         public abstract void BuildAdditionalInfo(String description);
-        public abstract TimeHelper.Task GetTask();
+        public abstract Task GetTask();
     }
 }

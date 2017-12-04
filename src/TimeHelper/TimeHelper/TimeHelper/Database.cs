@@ -1,10 +1,6 @@
 ﻿using SQLite;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
-using Xamarin.Forms;
 namespace TimeHelper
 {
     public interface ISQLite
@@ -19,16 +15,16 @@ namespace TimeHelper
         public static void CreateDatabase(string filename)
         {
             database = new SQLiteAsyncConnection(filename);
-            database.CreateTableAsync<TimeHelper.Task>();
+            database.CreateTableAsync<Task>();
         }
 
-        public static Task<TimeHelper.Task> GetItem(Int32 id)
+        public static Task<Task> GetItem(Int32 id)
         {
-            return database.GetAsync<TimeHelper.Task> (id);
+            return database.GetAsync<Task> (id);
             
         }
 
-        public static void SaveItem(TimeHelper.Task item, String path)
+        public static void SaveItem(Task item, String path)
         {
             var db = new SQLiteAsyncConnection(path);
             var status = db.InsertAsync(item);

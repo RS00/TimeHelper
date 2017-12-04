@@ -1,14 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace TimeHelper
 {
     class BuilderWithoutPriority : Builder
     {
-        private TimeHelper.Task Task;
+        private Task Task;
         public override void BuildAdditionalInfo(string description)
         {
             Task.Description = description;
@@ -16,7 +12,7 @@ namespace TimeHelper
 
         public override void BuildNameAndDate(String name, DateTime creationTime, DateTime deadlineTime)
         {
-            this.Task = new TimeHelper.Task(name, creationTime, deadlineTime);
+            Task = new Task(name, creationTime, deadlineTime);
         }
 
         public override void BuildPriority(int priority)
@@ -30,7 +26,7 @@ namespace TimeHelper
 
         public override Task GetTask()
         {
-            return this.Task;
+            return Task;
         }
     }
 }

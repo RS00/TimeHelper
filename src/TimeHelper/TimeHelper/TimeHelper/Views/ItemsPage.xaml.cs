@@ -1,9 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using TimeHelper.ViewModels;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -13,6 +10,10 @@ namespace TimeHelper.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class ItemsPage : ContentPage
     {
+        private const int SortByName = 0;
+        private const int SortByPriority = 1;
+        private const int SortByCreationDate = 2;
+        private const int SortByDeadline = 3;
         private Int32 SortMode = 0;
         public ItemsPage()
         {
@@ -43,25 +44,25 @@ namespace TimeHelper.Views
             List<Task> taskList;
             switch (SortMode)
             {
-                case 0:
+                case SortByName:
                     {
                         taskList = sorter.SortByName(ref Model.Model.TaskList);
                         SortMode++;
                         break;
                     }
-                case 1:
+                case SortByPriority:
                     {
                         taskList = sorter.SortByPriority(ref Model.Model.TaskList);
                         SortMode++;
                         break;
                     }
-                case 2:
+                case SortByCreationDate:
                     {
                         taskList = sorter.SortCreationDate(ref Model.Model.TaskList);
                         SortMode++;
                         break;
                     }
-                case 3:
+                case SortByDeadline:
                     {
                         taskList = sorter.SortByDeadline(ref Model.Model.TaskList);
                         SortMode = 0;
@@ -72,7 +73,6 @@ namespace TimeHelper.Views
                         taskList = new List<Task>();
                         break;
                     }
-
             }
             ObservableCollection<Model.Model> newItems = new ObservableCollection<Model.Model>();
             for (int i = 0; i < taskList.Count; i++)
@@ -80,7 +80,7 @@ namespace TimeHelper.Views
                 Task t = taskList[i];
                 newItems.Add(new Model.Model() { Name = t.Name, DeadlineDate = t.DeadLineDate, Priority = t.Priority, CreateDate = t.CreationDate.Date, Description = t.Description });
             }
-                        ((ItemsPageViewModel)BindingContext).Items = newItems;
+            ((ItemsPageViewModel)BindingContext).Items = newItems;
         }
     }
 }
